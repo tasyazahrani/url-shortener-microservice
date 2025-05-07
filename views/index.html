@@ -1,47 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>URL Shortener Microservice</title>
-    <link href="/public/style.css" rel="stylesheet" type="text/css" />
-  </head>
-  <body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener Microservice</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <main>
     <h1>URL Shortener Microservice</h1>
-    <main>
-      <section>
-        <form action="api/shorturl" method="POST">
-          <fieldset>
-            <legend>URL Shortener</legend>
-            <label for="url_input">URL:</label>
-            <input id="url_input" type="text" name="url" placeholder="https://www.freecodecamp.org/" required />
-            <input type="submit" value="POST URL" />
-          </fieldset>
-        </form>
-      </section>
-      
-      <section>
-        <h2>Example Usage:</h2>
-        <h3>Create a Short URL:</h3>
-        <code>POST [project_url]/api/shorturl - with URL body parameter</code>
-        <h3>Access Original URL:</h3>
-        <code>GET [project_url]/api/shorturl/1</code>
-        <h3>Will redirect to:</h3>
-        <code>https://freecodecamp.org/</code>
-      </section>
-      
-      <section>
-        <h2>Example Response:</h2>
-        <pre>
-{
-  "original_url": "https://freecodecamp.org",
-  "short_url": 1
-}
-        </pre>
-      </section>
-    </main>
-    <footer>
-      <p>By <a href="https://www.freecodecamp.org/">freeCodeCamp</a></p>
-    </footer>
-  </body>
+    <section>
+      <h2>Short URL Creation</h2>
+      <p>Example: POST /api/shorturl - https://www.freecodecamp.org/</p>
+      <form action="/api/shorturl" method="POST">
+        <fieldset>
+          <legend>URL Shortener</legend>
+          <label for="url_input">URL:</label>
+          <input id="url_input" type="text" name="url" placeholder="https://www.example.com" required>
+          <input type="submit" value="POST URL">
+        </fieldset>
+      </form>
+    </section>
+
+    <section class="examples">
+      <h2>Example Usage:</h2>
+      <ul>
+        <li><a href="/api/shorturl/1">http://localhost:3000/api/shorturl/1</a></li>
+      </ul>
+      <h3>Will Redirect To:</h3>
+      <ul>
+        <li>https://www.freecodecamp.org/</li>
+      </ul>
+    </section>
+  </main>
+  <footer>
+    <p>By <a href="https://www.freecodecamp.org/">freeCodeCamp</a></p>
+  </footer>
+</body>
 </html>
